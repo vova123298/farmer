@@ -1,21 +1,23 @@
 local sampev = require("samp.events")
-local telegramuvedi = true -- Для кого я это комментирую? 
-require("addon")  -- Шизофреник ебаный
+local telegramuvedi = true -- Р”Р»СЏ РєРѕРіРѕ СЏ СЌС‚Рѕ РєРѕРјРјРµРЅС‚РёСЂСѓСЋ? 
+require("addon")  -- РЁРёР·РѕС„СЂРµРЅРёРє РµР±Р°РЅС‹Р№
 local napisal = true
 local requests = require 'requests'
 local buf = 0
+script_name("auto-update")
+script_version("16.07.2023")
 local startbot
 local azcount = 0
 local lpass = 12
 local vector3d = require('vector3d')
 local referal = ('Sam_Mason')
-servername = ('неизвестно') --не менять
+servername = ('РЅРµРёР·РІРµСЃС‚РЅРѕ') --РЅРµ РјРµРЅСЏС‚СЊ
 local ss = require("samp-store")
-promocodik = ('mason') --не менять
+promocodik = ('mason') --РЅРµ РјРµРЅСЏС‚СЊ
 setAutoPick(true)
-local token = ('6072446648:AAEstALRfqwpV-cXKDNJsYtwkRVCQH8NKMA') -- токен бота @botfather
-local chatid = ('5905110684') -- чат айди @getmyid_bot
-ss.InitApiKey("Токен пихай сюды")
+local token = ('6072446648:AAEstALRfqwpV-cXKDNJsYtwkRVCQH8NKMA') -- С‚РѕРєРµРЅ Р±РѕС‚Р° @botfather
+local chatid = ('5905110684') -- С‡Р°С‚ Р°Р№РґРё @getmyid_bot
+ss.InitApiKey("РўРѕРєРµРЅ РїРёС…Р°Р№ СЃСЋРґС‹")
 
 local link = ('https://api.telegram.org/bot' .. token .. '/sendMessage?chat_id=' .. chatid .. '&text=')
 botSpawn = 1
@@ -67,29 +69,29 @@ function zavodoutw()
 		getpickout(626, 628)
 		wait((3000))
 		coordStart(1514, 1354, 17.50, 100, 2.0, true)
-		print("Качаемся в RCPD")
+		print("РљР°С‡Р°РµРјСЃСЏ РІ RCPD")
 	end)
 end
 
 function sampev.onServerMessage(color, text)
-	if text:match('Отправляйтесь к разгрузке вагонов') then 
+	if text:match('РћС‚РїСЂР°РІР»СЏР№С‚РµСЃСЊ Рє СЂР°Р·РіСЂСѓР·РєРµ РІР°РіРѕРЅРѕРІ') then 
 	    runRoute("!play peregototrum")
 	end		
 	if text:match('+3.0 HP') then 
-	    print("Болька")
+	    print("Р‘РѕР»СЊРєР°")
 	end	
-	if text:find("Пока вы малоимущий") then
+	if text:find("РџРѕРєР° РІС‹ РјР°Р»РѕРёРјСѓС‰РёР№") then
 	    onserver()
 	end
-    if text:find('Груза перетащено: {......}%d+') then
-        rabgryzila = tonumber(text:match('Груза перетащено: {......}(%d+)'))
+    if text:find('Р“СЂСѓР·Р° РїРµСЂРµС‚Р°С‰РµРЅРѕ: {......}%d+') then
+        rabgryzila = tonumber(text:match('Р“СЂСѓР·Р° РїРµСЂРµС‚Р°С‰РµРЅРѕ: {......}(%d+)'))
 		if rabgryzila >= 30 then
 		runRoute("!play gopereod")
 		altwait(15)
 		end
     end   
-	if text:find('Вы уже изготовили: {......}%d+') then
-        rabzavod = tonumber(text:match('Вы уже изготовили: {......}(%d+)'))
+	if text:find('Р’С‹ СѓР¶Рµ РёР·РіРѕС‚РѕРІРёР»Рё: {......}%d+') then
+        rabzavod = tonumber(text:match('Р’С‹ СѓР¶Рµ РёР·РіРѕС‚РѕРІРёР»Рё: {......}(%d+)'))
 		if rabzavod >= 30 then
 		    zavodoutw()
 		elseif rabzavod < 30 then
@@ -100,7 +102,7 @@ function sampev.onServerMessage(color, text)
         azcount = text:match('+1 AZ Coins.(%d+)')
 		inventclo()
     end
-	if text:find("Вам был добавлен предмет 'Ускоренная прокачка") then
+	if text:find("Р’Р°Рј Р±С‹Р» РґРѕР±Р°РІР»РµРЅ РїСЂРµРґРјРµС‚ 'РЈСЃРєРѕСЂРµРЅРЅР°СЏ РїСЂРѕРєР°С‡РєР°") then
 	    sendInput("/invent")
 	end
 end
@@ -225,10 +227,10 @@ function zavodgive()
 	altwait(5)
     end)
 end
--- Чек слапа низ
+-- Р§РµРє СЃР»Р°РїР° РЅРёР·
 function sampev.onSetPosition(x,y,z)
     local xx, yy, zz = getBotPosition()
-    if (x == xx and y == yy and z ~= zz) then print("слап") end
+    if (x == xx and y == yy and z ~= zz) then print("СЃР»Р°Рї") end
 end
 
 local slap = {
@@ -239,95 +241,95 @@ function sampev.onSetSpawnInfo(team, skin, _, pos, rotation, weapons, ammo)
 end
 
 function sampev.onShowDialog(id, style, title, btn1, btn2, text)
-    if title:find('Пароль') then
+    if title:find('РџР°СЂРѕР»СЊ') then
         sendDialogResponse(id, 1, 0, password)
         return false
     end
-    if title:find('Авторизация') then
+    if title:find('РђРІС‚РѕСЂРёР·Р°С†РёСЏ') then
         sendDialogResponse(id, 1, 0, password)
         return false
     end
-    if title:find('Выберите ваш пол') then
+    if title:find('Р’С‹Р±РµСЂРёС‚Рµ РІР°С€ РїРѕР»') then
   sendDialogResponse(id, 1, 0, "")
         return false
     end
- if title:find('Выберите цвет кожи') then
+ if title:find('Р’С‹Р±РµСЂРёС‚Рµ С†РІРµС‚ РєРѕР¶Рё') then
   sendDialogResponse(id, 1, 0, "")
         return false
     end
- if title:find('вы о нас узнали?') then
+ if title:find('РІС‹ Рѕ РЅР°СЃ СѓР·РЅР°Р»Рё?') then
   sendDialogResponse(id, 1, 1, "")
         return false
  end
- if title:find('Введите ник пригласившего?') then
+ if title:find('Р’РІРµРґРёС‚Рµ РЅРёРє РїСЂРёРіР»Р°СЃРёРІС€РµРіРѕ?') then
   sendDialogResponse(id, 1, 0, referal)
         return false
  end
- if title:find('Дополнительная') then
+ if title:find('Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ') then
   sendDialogResponse(id, 0, 0, "")
   return false
  end
-    if text:find('Вы собираетесь устроиться') then
+    if text:find('Р’С‹ СЃРѕР±РёСЂР°РµС‚РµСЃСЊ СѓСЃС‚СЂРѕРёС‚СЊСЃСЏ') then
         sendDialogResponse(id, 1, 0, "")
 		runRoute("!play pereodevalkagryz")
 		altwait(3)
         return false
     end
 	
-    if text:find('ответил вам:') then
+    if text:find('РѕС‚РІРµС‚РёР» РІР°Рј:') then
         sendDialogResponse(id, 1, 0, "")
 		runRoute("stop")
         autoot()
         return false
     end
 	
-	if text:find("Вы хотите переодеться чтобы начать работу?") then
+	if text:find("Р’С‹ С…РѕС‚РёС‚Рµ РїРµСЂРµРѕРґРµС‚СЊСЃСЏ С‡С‚РѕР±С‹ РЅР°С‡Р°С‚СЊ СЂР°Р±РѕС‚Сѓ?") then
         sendDialogResponse(id, 1, 0, "")
         return false
     end
-		if text:find("Вы успешно обменяли") then
+		if text:find("Р’С‹ СѓСЃРїРµС€РЅРѕ РѕР±РјРµРЅСЏР»Рё") then
         return false
     end
-		if text:find("Вы хотите переодеться и начать работать?") then
+		if text:find("Р’С‹ С…РѕС‚РёС‚Рµ РїРµСЂРµРѕРґРµС‚СЊСЃСЏ Рё РЅР°С‡Р°С‚СЊ СЂР°Р±РѕС‚Р°С‚СЊ?") then
         sendDialogResponse(id, 1, 0, "")
 		runRoute("!play zavodtakeitem")
         return false
     end
-	if title:find("Акции на Arizona") then
+	if title:find("РђРєС†РёРё РЅР° Arizona") then
         return false
     end
-	if title:find("Акции на") then
+	if title:find("РђРєС†РёРё РЅР°") then
         return false
     end
 	
-	if text:find("которое хотите использовать") then
+	if text:find("РєРѕС‚РѕСЂРѕРµ С…РѕС‚РёС‚Рµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ") then
         sendDialogResponse(id, 1, 0, tostring(azcountnumb))
 		buf = 0
 		waitdon()
         return false
     end	
-	if text:find("Вы получили бан аккаунта") then
+	if text:find("Р’С‹ РїРѕР»СѓС‡РёР»Рё Р±Р°РЅ Р°РєРєР°СѓРЅС‚Р°") then
         sendDialogResponse(id, 1, 0, "")
 		generatenick()
         return false
     end
-		if text:find("Вы хотите переодеться чтобы завершить работу?") then
+		if text:find("Р’С‹ С…РѕС‚РёС‚Рµ РїРµСЂРµРѕРґРµС‚СЊСЃСЏ С‡С‚РѕР±С‹ Р·Р°РІРµСЂС€РёС‚СЊ СЂР°Р±РѕС‚Сѓ?") then
         sendDialogResponse(id, 1, 0, "")
 		coordzavod()
         return false
     end
-	if title:find('Информация') then
+	if title:find('РРЅС„РѕСЂРјР°С†РёСЏ') then
         sendDialogResponse(id, 1, 0, "")
         return false
     end
-	if title:find('Этот аккаунт заблокирован!') then
-	    print("Бан нахуй")
+	if title:find('Р­С‚РѕС‚ Р°РєРєР°СѓРЅС‚ Р·Р°Р±Р»РѕРєРёСЂРѕРІР°РЅ!') then
+	    print("Р‘Р°РЅ РЅР°С…СѓР№")
 		sendDialogResponse(id, 1, 0, "")
         generatenick()
         return false
     end
 	
-	if title:find('Платные услуги') then
+	if title:find('РџР»Р°С‚РЅС‹Рµ СѓСЃР»СѓРіРё') then
         sendDialogResponse(id, 1, 0, "")
         return false
     end
@@ -344,7 +346,7 @@ function sampev.onShowDialog(id, style, title, btn1, btn2, text)
         sendDialogResponse(id, 1, 0, '')
         return false
     end
-	if text:find("Подсказка") then
+	if text:find("РџРѕРґСЃРєР°Р·РєР°") then
 	 sendDialogResponse(id, 1, 0, "")
 	return false
 	end
@@ -357,11 +359,11 @@ function waitdon()
 end
 
 	local vityt = {
-    "превет да тут";
-    "тут я";
-    "да";
-    "ку да тут";
-	"я тут";
+    "РїСЂРµРІРµС‚ РґР° С‚СѓС‚";
+    "С‚СѓС‚ СЏ";
+    "РґР°";
+    "РєСѓ РґР° С‚СѓС‚";
+	"СЏ С‚СѓС‚";
 }
 
 function autoot()
@@ -373,7 +375,7 @@ function autoot()
 	 buf = 1
 	 end)
 end
-function sozdatlog(text) -- Типа тута оно кидает вон то туда и все отлично
+function sozdatlog(text) -- РўРёРїР° С‚СѓС‚Р° РѕРЅРѕ РєРёРґР°РµС‚ РІРѕРЅ С‚Рѕ С‚СѓРґР° Рё РІСЃРµ РѕС‚Р»РёС‡РЅРѕ
 	local f = io.open(getPath().."\\scripts\\gryzila.txt", "a")
 	f:write(text)
 	f:close()
@@ -387,20 +389,20 @@ function onReceivePacket(id, bs)
 end
 
 function onLoad()
-	print("[Грузчики] *приехали*")
-	print("[Бригадир] РАБОТАТЬ СУКА!!!")
+	print("[Р“СЂСѓР·С‡РёРєРё] *РїСЂРёРµС…Р°Р»Рё*")
+	print("[Р‘СЂРёРіР°РґРёСЂ] Р РђР‘РћРўРђРўР¬ РЎРЈРљРђ!!!")
 	newTask(function()
 		while true do
 			wait(10000)
 			local score = getBotScore()
 			if getBotScore() >= 3 and napisal == true then
 				sozdatlog(getBotNick()..':'..password.." "..getBotMoney().." "..servername.."\n")
-				local upload_res = ss.UploadAccount(serverip, 5, getBotNick(), password, "Аккаунт под основу", "Прокаченый аккаунт под основу", _)
-				print("акк сохранен")
+				local upload_res = ss.UploadAccount(serverip, 5, getBotNick(), password, "РђРєРєР°СѓРЅС‚ РїРѕРґ РѕСЃРЅРѕРІСѓ", "РџСЂРѕРєР°С‡РµРЅС‹Р№ Р°РєРєР°СѓРЅС‚ РїРѕРґ РѕСЃРЅРѕРІСѓ", _)
+				print("Р°РєРє СЃРѕС…СЂР°РЅРµРЅ")
 				if upload_res then
-					asyncHttpRequest('GET', AnsiToUtf8(link.."[Успешный аккаунт]%0A%0A".."Ник: "..getBotNick().."%0AСервер: "..servername), nil, nil, nil)
+					asyncHttpRequest('GET', AnsiToUtf8(link.."[РЈСЃРїРµС€РЅС‹Р№ Р°РєРєР°СѓРЅС‚]%0A%0A".."РќРёРє: "..getBotNick().."%0AРЎРµСЂРІРµСЂ: "..servername), nil, nil, nil)
 				else
-					print("у вас выключены телеграм уведомления")
+					print("Сѓ РІР°СЃ РІС‹РєР»СЋС‡РµРЅС‹ С‚РµР»РµРіСЂР°Рј СѓРІРµРґРѕРјР»РµРЅРёСЏ")
 				end
 				generatenick()
 				napisal = false
@@ -418,7 +420,7 @@ end
 function gryzilarand()
     math.randomseed(os.time())
     runRoute("!play "..marshrut[math.random(#marshrut)])
-	print("Выше рандом")
+	print("Р’С‹С€Рµ СЂР°РЅРґРѕРј")
 end
 function onserver()
         newTask(function()
@@ -427,7 +429,7 @@ function onserver()
 				wait((5*1000))
 				botSpawn = 1
 				print(getAllPickups())
-			    print("[Рабочий] Опять работать?")
+			    print("[Р Р°Р±РѕС‡РёР№] РћРїСЏС‚СЊ СЂР°Р±РѕС‚Р°С‚СЊ?")
 			    runRoute("!play fromspawngryz")
 		        wait((50*1000))	
 			    fakealt()
@@ -456,7 +458,7 @@ end)
 	end
 	if serverip == '185.169.134.4:7777' then
 		servername = ('Tucson')
-		promocodik = ('берлога')
+		promocodik = ('Р±РµСЂР»РѕРіР°')
 	end
 	if serverip == '185.169.134.43:7777' then
 		servername = ('Scottdale')
@@ -496,7 +498,7 @@ end)
 	end
 	if serverip == '185.169.134.171:7777' then
 		servername = ('Glendale')
-		promocodik = ('РИНЖИ')
+		promocodik = ('Р РРќР–Р')
 	end
 	if serverip == '185.169.134.172:7777' then
 		servername = ('Kingman')
@@ -550,7 +552,7 @@ end)
 		servername = ('Mobile III')
 		promocodik = ('mason')
 	end
-	print("вы зашли на сервер "..servername)
+	print("РІС‹ Р·Р°С€Р»Рё РЅР° СЃРµСЂРІРµСЂ "..servername)
 end
 	
 	
@@ -561,7 +563,7 @@ end
 	
 	
 	
-	-- Хуйня ебаная внизу
+	-- РҐСѓР№РЅСЏ РµР±Р°РЅР°СЏ РІРЅРёР·Сѓ
 	
 	local effil = require 'effil'
 
@@ -635,7 +637,7 @@ function AnsiToUtf8(s)
 	 end
   return r
 end
--- Хуйня ебаная вверху
+-- РҐСѓР№РЅСЏ РµР±Р°РЅР°СЏ РІРІРµСЂС…Сѓ
 
 
 
